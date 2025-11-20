@@ -1,2 +1,209 @@
 <!DOCTYPE html>
-<html><body><h1>Birthday Website</h1><p>Your full themed website code goes here.</p></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Darshita</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffd1e8, #ffe6f5, #ffc7de);
+      text-align: center;
+      padding: 20px;
+      color: #ff2e80;
+    }
+    h1 {
+      font-size: 3.5rem;
+      color: #ff4fa3;
+      text-shadow: 0 3px 10px rgba(255, 120, 180, 0.35);
+    }
+    h1 {
+      font-size: 3rem;
+      color: #ff2e80;
+      margin-top: 30px;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #444;
+      max-width: 600px;
+      margin: auto;
+    }
+    .card {
+      background: #fff0f7ee;
+      backdrop-filter: blur(12px);
+      border: 3px solid #ffb6d9;
+      border-radius: 25px;
+      padding: 30px;
+      margin: 25px auto;
+      width: 90%;
+      max-width: 550px;
+      box-shadow: 0 8px 25px rgba(255, 120, 180, 0.3);
+    }
+    img {
+      width: 100%;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #333;
+    }
+    .heart {
+      font-size: 2rem;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+      /* Falling hearts */
+    .hearts::before {
+      content: "💗💖💕💞💘";
+      position: fixed;
+      top: -10%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 2rem;
+      animation: fall 5s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10%); }
+      100% { transform: translateY(110%); }
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff9ecf, #ffd4ec);
+    }
+
+    /* Cute theme additions */
+    .card {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      border: 2px solid #ffb6d9;
+      box-shadow: 0 6px 20px rgba(255, 100, 180, 0.25);
+    }
+
+    h1, h2 {
+      font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+      text-shadow: 0 2px 6px rgba(255, 80, 150, 0.3);
+    }
+
+    nav a {
+      color: #ff4fa3;
+      text-decoration: none;
+      padding: 10px 16px;
+      background: #ffdaec;
+      border-radius: 14px;
+      margin: 0 6px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(255, 150, 200, 0.25);
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #ffb6d9;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* Sparkle animation */
+    .sparkles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.8) 2px, transparent 2px);
+      background-size: 50px 50px;
+      animation: sparkle 3s infinite;
+    }
+
+    @keyframes sparkle {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+</style>
+</head>
+<body>
+  <div class="sparkles"></div>
+  <h1>Happy Birthday, Darshita! 🎉💖</h1>
+  <p>Dear Dallu, you are the cutest part of my world. This small website is just for you — to make you smile today and every day. 🩷</p>
+
+  <div class="card">
+    <img src="YOUR_IMAGE_URL_HERE" alt="Cute Photo" />
+    <p>You make everything better just by being you. 💕</p>
+  </div>
+
+  <div class="card">
+    <p class="heart">💗💗💗</p>
+    <p>I am so lucky to have you. Happiest birthday, my love!</p>
+  </div>
+
+  <div class="footer">Made with ❤ by Nisch</div>
+  <!-- Background animations -->
+  <div class="hearts"></div>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="happy_birthday_love.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Navigation -->
+  <nav style="margin-top:20px; font-size:1.2rem;">
+    <a href="#gallery">Gallery</a> • 
+    <a href="#notes">Love Notes</a> • 
+    <a href="#countdown">Countdown</a>
+  </nav>
+
+  <!-- Gallery Page -->
+  <section id="gallery" class="card">
+    <h2>Gallery 📸</h2>
+    <img src="YOUR_IMAGE_1" />
+    <img src="YOUR_IMAGE_2" />
+  </section>
+
+  <!-- Love Notes Page -->
+  <section id="notes" class="card">
+    <h2>Love Notes 💌</h2>
+    <p>You are my favorite person in the whole world.</p>
+    <p>Thank you for being you, Dallu. 💗</p>
+  </section>
+
+  <!-- Countdown Page -->
+  <section id="countdown" class="card">
+    <h2>Birthday Countdown 🎂</h2>
+    <p id="timer" style="font-size:1.5rem; font-weight:bold;"></p>
+  </section>
+
+  <script>
+    // Countdown Script
+    const birthday = new Date('2025-11-20').getTime();
+    setInterval(function() {
+      const now = new Date().getTime();
+      const diff = birthday - now;
+
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const secs = Math.floor((diff % (1000*60)) / 1000);
+
+      document.getElementById('timer').innerHTML = days + 'd ' + hours + 'h ' + mins + 'm ' + secs + 's';
+    }, 1000);
+  </script>
+
+  <!-- Background animations -->
+  <div class="hearts"></div>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="Thank You for everything .mp3" type="audio/mpeg">
+  </audio>
+
+</body>
+</html>
